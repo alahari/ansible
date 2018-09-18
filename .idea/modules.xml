@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ansible.iml" filepath="$PROJECT_DIR$/.idea/ansible.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/aaconfmanager.iml" filepath="$PROJECT_DIR$/.idea/aaconfmanager.iml" />
     </modules>
   </component>
 </project>

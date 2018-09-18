@@ -20,18 +20,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createOrg.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="createOrg.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/createOrg.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+            <state relative-caret-position="102">
+              <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getOrg.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aaProfiles/getOrg.json">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="getAuthToken.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sourceProfiles/getAuthToken.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="81" selection-start-line="8" selection-start-column="81" selection-end-line="8" selection-end-column="81" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="getConfigFromRepo.yml" pinned="false" current-in-tab="false">
@@ -90,6 +94,7 @@
         <option value="$PROJECT_DIR$/aa-config-playbook.yml" />
         <option value="$PROJECT_DIR$/createOrg.yml" />
         <option value="$PROJECT_DIR$/getConfigFromRepo.yml" />
+        <option value="$PROJECT_DIR$/sourceProfiles/getAuthToken.yml" />
       </list>
     </option>
   </component>
@@ -105,7 +110,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -117,19 +121,23 @@
             <path>
               <item name="ansible" type="b2602c69:ProjectViewProjectNode" />
               <item name="ansible" type="462c0819:PsiDirectoryNode" />
-              <item name="aaProfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="sourceProfiles" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$USER_HOME$/Documents/GitHub" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\work\ansible\sourceProfiles" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\work\ansible" />
       <recent name="C:\work\ansible\aaProfiles" />
@@ -245,6 +253,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/aaProfiles/getOrg.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getConfigFromRepo.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gitrepo.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aa-config-playbook.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/otpIssuance.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createRule.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createOrg.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createOrg.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="35" selection-start-column="35" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/getConfigFromRepo.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -344,8 +400,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/createOrg.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        <state relative-caret-position="102">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sourceProfiles/getAuthToken.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="81" selection-start-line="8" selection-start-column="81" selection-end-line="8" selection-end-column="81" />
         </state>
       </provider>
     </entry>

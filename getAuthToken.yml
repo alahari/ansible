@@ -9,12 +9,18 @@
          url: http://localhost:8080/aa-restapi/ca/advancedauth/v1/admin/authtoken
          return_content: yes
          method: POST
-         body: "{{ lookup('file','aaProfiles/createOrg.json') }}"
+         body: "{{ lookup('file','aaProfiles/getAuthToken.json') }}"
          status_code: 201
          body_format: json
          
        register: result
        
      - debug:
-         msg: "Web Service Response {{result.json}} " 
+         msg: "Web Service Response {{result.json.authToken}} "
+
+     - set_fact:
+         token: "{{result.json.authToken}}"
+
+     - debug:
+         msg: "Token {{token}}"
          

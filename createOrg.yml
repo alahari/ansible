@@ -4,9 +4,12 @@
 
   tasks:
 
+     - debug:
+         msg: " Token create org {{token}}"
+
      - name: create Organisation
        uri:
-         url: http://localhost:3000/org
+         url: http://localhost:8080/aa-restapi/ca/advancedauth/v1/admin/orgs
          return_content: yes
          method: POST
          body: "{{ lookup('file','aaProfiles/createOrg.json') }}"

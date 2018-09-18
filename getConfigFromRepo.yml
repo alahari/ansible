@@ -1,0 +1,6 @@
+---
+- name: Get AA profiles from GitHub.
+  hosts: localhost  
+  tasks:
+     - name: Get the Advanced Auth configs from github
+       script: gitrepo.sh

@@ -1,0 +1,21 @@
+---
+- name: Create Risk rule.
+  hosts: localhost
+
+  tasks:
+
+     - name: create risk rule
+       uri:
+         url: http://localhost:3000/rule
+         return_content: yes
+         method: POST
+         body: "{{ lookup('file','aaProfiles/ruleSet.json') }}"
+         status_code: 201
+         body_format: json
+         
+       register: result
+       
+     - debug:
+         msg: "Web Service Response {{result.json}} "
+     
+         

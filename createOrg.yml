@@ -1,0 +1,21 @@
+---
+- name: Create Organisation to set risk and strong auth profile.
+  hosts: localhost
+
+  tasks:
+
+     - name: create Organisation
+       uri:
+         url: http://localhost:3000/org
+         return_content: yes
+         method: POST
+         body: "{{ lookup('file','aaProfiles/createOrg.json') }}"
+         status_code: 201
+         body_format: json
+         
+       register: result
+       
+     - debug:
+         msg: "Web Service Response {{result.json}} "
+     
+         

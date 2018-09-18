@@ -1,0 +1,21 @@
+---
+- name: Create OTP isuance profile.
+  hosts: localhost
+
+  tasks:
+
+     - name: create OTP Profile
+       uri:
+         url: http://localhost:3000/otpProfile
+         return_content: yes
+         method: POST
+         body: "{{ lookup('file','aaProfiles/otpIssuance.json') }}"
+         status_code: 201
+         body_format: json
+         
+       register: result
+       
+     - debug:
+         msg: "Web Service Response {{result.json}} "
+     
+         

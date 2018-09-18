@@ -1,0 +1,10 @@
+---
+- name: Main play book to orchestrate the flow.
+  hosts: localhost
+
+- include: getConfigFromRepo.yml
+- include: createOrg.yml
+- include: createRule.yml
+- include: otpIssuance.yml
+     
+         

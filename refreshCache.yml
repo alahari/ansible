@@ -5,10 +5,10 @@
   tasks:
      - name:
        set_fact:
-         urlParams: "orgId eq global"
+         urlParams: "orgId eq org1"
 
      - debug:
-         msg: " Refreshing the system cache to enforce  the changes "
+         msg: "Refreshing the system cache to enforce  the changes "
 
      - name: Refresh Cache
        uri:
@@ -20,5 +20,5 @@
        register: result
        
      - debug:
-         msg: "is cached refreshed ?  {{result.json}} "
+         msg: "is cache refreshed ?  {{result.json}} "
          

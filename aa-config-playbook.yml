@@ -3,9 +3,10 @@
   hosts: localhost
 
 #- include: getConfigFromRepo.yml
-- include: getAuthToken.yml
-- include: createOrg.yml
-- include: createRule.yml
-- include: otpIssuance.yml
+#- include: getAuthToken.yml
+#- include: createOrg.yml
+#- include: createRule.yml
+#- include: otpIssuance.yml
+- include: refreshCache.yml
      
          

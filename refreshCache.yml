@@ -1,0 +1,24 @@
+---
+- name: Refresh the global cache to enforce changes.
+  hosts: localhost
+
+  tasks:
+     - name:
+       set_fact:
+         urlParams: "orgId eq global"
+
+     - debug:
+         msg: " Refreshing the system cache to enforce  the changes "
+
+     - name: Refresh Cache
+       uri:
+         url: "http://localhost:8080/aa-restapi/ca/advancedauth/v1/admin/orgs/refreshcache?$filter={{ urlParams | urlencode }}"
+         return_content: yes
+         method: PUT
+         status_code: 202
+
+       register: result
+       
+     - debug:
+         msg: "is cached refreshed ?  {{result.json}} "
+         

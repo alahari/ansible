@@ -2,9 +2,9 @@
 - name: Main play book to orchestrate the flow.
   hosts: localhost
 
-- include: getConfigFromRepo.yml # Get the configs profiles from repo
-- include: getAuthToken.yml  # get the token by passing admin cred
-- include: createOrg.yml  # Create Organisation
+- import_playbook: getConfigFromRepo.yml # Get the configs profiles from repo
+- import_playbook: getAuthToken.yml  # get the token by passing admin cred
+- import_playbook: createOrg.yml  # Create Organisation
 #- include: createRule.yml  #  configure risk profiles to the given org
 #- include: otpIssuance.yml # configure strong auth profiles
-- include: refreshCache.yml # Refresh the cache to enforce changes
+- import_playbook: refreshCache.yml # Refresh the cache to enforce changes

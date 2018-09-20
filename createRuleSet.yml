@@ -1,0 +1,23 @@
+---
+- name: Create Risk rule.
+  hosts: localhost
+
+  tasks:
+     - debug:
+         msg: " Token in create rule set {{token}}"
+
+     - name: create risk rule
+       uri:
+         url: http://localhost:8080/aa-restapi/ca/advancedauth/v1/admin/orgs/DEFAULTORG/ruleset
+         return_content: yes
+         method: POST
+         body: "{{ lookup('file','aaProfiles/ruleSet.json') }}"
+         status_code: 201
+         body_format: json
+         
+       register: result
+       
+     - debug:
+         msg: "Web Service Response {{result.json}} "
+     
+         

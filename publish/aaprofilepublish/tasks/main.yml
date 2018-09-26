@@ -1,0 +1,18 @@
+---
+# tasks file for aaprofilepublish
+
+
+#- name: Read JSON file (can also be a variable).
+#  shell: cat ./orgs.json
+#  register: json
+
+
+- debug :
+    msg: "Hello Venki {{json_file}} "
+
+- name: Get simple value.
+  set_fact:
+  myvar: "{{ json.stdout | from_json }}"
+
+- debug:
+    msg: "Alahari  {{ json_file |  json_query('[0].orgName') }}  here "

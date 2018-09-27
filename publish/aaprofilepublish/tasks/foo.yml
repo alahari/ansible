@@ -1,0 +1,6 @@
+---
+# possibly saved as tasks/foo.yml
+
+- name: placeholder foo
+  debug:
+    msg: "Venki Alahari"

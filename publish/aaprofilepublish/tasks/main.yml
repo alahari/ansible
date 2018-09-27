@@ -16,3 +16,24 @@
 
 - debug:
     msg: "Alahari  {{ json_file |  json_query('[0].orgName') }}  here "
+
+
+- debug:
+    msg: " {{simple_value}}"
+
+- debug:
+    msg: >
+         --== Ansible Jinja2 for range
+
+         {% for entry in json_file -%}
+            {{ entry }} {{ "VVVVVVVVVVVV" }}
+
+         {% endfor %}
+
+- name: Iteratae JSON
+  debug: var=item.orgName
+  with_items: "{{json_file}}"
+
+- include: tasks/createOrg.yml
+    orgName={{item}}
+  with_items: "{{json_file}}"

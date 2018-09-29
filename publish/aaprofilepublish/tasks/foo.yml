@@ -3,4 +3,4 @@
 
 - name: placeholder foo
   debug:
-    msg: "Venki Alahari"
+    msg: "Venki Al"

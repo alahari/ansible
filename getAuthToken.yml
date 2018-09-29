@@ -1,10 +1,10 @@
 ---
-- name: Create Organisation to set risk and strong auth profile.
+- name: get Auth Token.
   hosts: localhost
 
   tasks:
 
-     - name: create Organisation
+     - name: get auth token
        uri:
          url: http://localhost:8080/aa-restapi/ca/advancedauth/v1/admin/authtoken
          return_content: yes
@@ -12,9 +12,9 @@
          body: "{{ lookup('file','aaProfiles/getAuthToken.json') }}"
          status_code: 201
          body_format: json
-         
+
        register: result
-       
+
      - debug:
          msg: "Web Service Response {{result.json.authToken}} "
 
@@ -23,4 +23,3 @@
 
      - debug:
          msg: "Token {{token}}"
-         

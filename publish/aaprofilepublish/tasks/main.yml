@@ -8,7 +8,9 @@
 
 
 - debug :
-    msg: "Hello Venki {{json_file}} "
+    msg: "Hello Venki {{json_file}}  {{result}} "
+
+
 
 - name: Get simple value.
   set_fact:
@@ -34,6 +36,11 @@
   debug: var=item.orgName
   with_items: "{{json_file}}"
 
+- shell: echo "Venki"
+  register: venki
+
+- debug:
+    msg: " ************ {{venkiAlahari.stdout}}"
 - include: tasks/createOrg.yml
     orgName={{item}}
   with_items: "{{json_file}}"

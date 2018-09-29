@@ -1,0 +1,6 @@
+---
+# defaults file for authtoken
+#authCredentials: "{ "userID": "venki",  "orgName": "defaultorg",  "credential": "Temp@2018"
+#authCredentials: "LEEELA"
+
+authCredentials: "{{lookup('file','./authcred.json') | from_json }}"

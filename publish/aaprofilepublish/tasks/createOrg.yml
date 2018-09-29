@@ -1,6 +1,9 @@
 ---
 # possibly saved as tasks/foo.yml
 
+- debug:
+    msg: " ******create****** {{venki.stdout}}"
+
 - name: placeholder foo
   debug:
     msg: "Venki Alahari {{orgName}}"

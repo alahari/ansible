@@ -1,0 +1,39 @@
+---
+# possibly saved as tasks/foo.yml
+
+- debug:
+    msg: " ******create****** {{venki.stdout}}"
+
+- name: placeholder foo
+  debug:
+    msg: "Venki Alahari {{orgName}}"
+
+- name: json path testing
+  debug:
+    msg: "  displaying org name {{orgName | json_query('orgName')}}"
+
+- name: adding json key
+  set_fact:
+    imported_var: "{{ orgName | default([])  | combine({'repositoryType':'ARUSER'})}}"
+  when: orgName.repositoryType=="LDAP"
+
+- name: json path testing
+  debug:
+    msg: "  displaying amrutha name {{imported_var | json_query('repositoryType')}}"
+
+
+
+- name: create Organisation
+  uri:
+    url: http://localhost:8080/aa-restapi/ca/advancedauth/v1/admin/orgs
+    return_content: yes
+    method: POST
+    body: "{{imported_var}}"
+    status_code: 201
+    body_format: json
+    headers:
+      Content-Type: "application/json"
+      accept: "application/json"
+      authToken: "{{token}}"
+
+  register: result

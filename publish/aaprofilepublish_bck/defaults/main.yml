@@ -1,0 +1,5 @@
+---
+# defaults file for aaprofilepublish
+
+simple_value: "Superb!!!"
+json_file: "{{lookup('file','./orgs.json') | from_json }}"

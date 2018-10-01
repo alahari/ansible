@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+
+  tasks:
+     - debug:
+         msg: " Token in create rule set {{token}}"
+
+
+

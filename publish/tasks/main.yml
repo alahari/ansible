@@ -32,10 +32,10 @@
     msg: "pwd .... {{pwd}}"
 
 - name: change dir
-  command: chdir=aaProfiles ls
+  command: chdir=/mnt/c/work/advancedAuthProfManager ls
 
 - debug:
-    msg: "pwd .... {{pwd}}"  
+    msg: "pwd .... {{pwd}}"
 
 # - script: tasks/gitpublish.sh
 

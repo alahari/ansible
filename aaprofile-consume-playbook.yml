@@ -3,4 +3,4 @@
 
   roles:
     - authtoken
-    - publish/aaprofilepublish
+    - consume

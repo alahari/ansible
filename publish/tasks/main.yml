@@ -43,4 +43,4 @@
   command: git commit -a -m "latest changes in dev"
 
 - name: git push
-  command: git push
+  command: git push https://alahari:Veda2018@github.com/alahari/aaProfiles.git

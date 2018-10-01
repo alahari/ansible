@@ -35,6 +35,8 @@
   command: chdir=aaProfiles ls
 
 # - script: tasks/gitpublish.sh
+- name: git pull
+  command: git pull
 
 - name: git add
   command: git add .

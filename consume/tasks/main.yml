@@ -1,2 +1,8 @@
 ---
 # tasks file for consume
+
+- name: debug message
+  debug:
+    msg: "Here You GO !!!!!"
+
+- include: tasks/getOrg.yml

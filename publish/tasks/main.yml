@@ -7,43 +7,40 @@
 #  register: json
 
 
-- debug :
-    msg: "Hello Venki {{json_file}}  {{result}} "
 
+- include: tasks/getOrg.yml
 
-
-- name: Get simple value.
-  set_fact:
-  myvar: "{{ json.stdout | from_json }}"
-
-- debug:
-    msg: "Alahari  {{ json_file |  json_query('[0].orgName') }}  here "
+- script: tasks/gitrepo.sh
 
 
 - debug:
-    msg: " {{simple_value}}"
+    msg: " json format ........ {{result | to_nice_json(indent=2)}}"
+
+- name: Ansible create file with content example
+  copy:
+    dest: "aaProfiles/org.json"
+    content: |
+      {{ result.content | from_json | to_nice_json(indent=2)}}
+
+# - script: tasks/gitpublish.sh
+
+- name: change dir
+  command: pwd
+  register: pwd
 
 - debug:
-    msg: >
-         --== Ansible Jinja2 for range
+    msg: "pwd .... {{pwd}}"
 
-         {% for entry in json_file -%}
-            {{ entry }} {{ "VVVVVVVVVVVV" }}
+- name: change dir
+  command: chdir=aaProfiles ls
 
-         {% endfor %}
+# - script: tasks/gitpublish.sh
 
-- name: Iteratae JSON
-  debug: var=item.orgName
-  with_items: "{{json_file}}"
+- name: git add
+  command: git add .
 
-- shell: echo "Venki"
-  register: venki
+- name: git commit
+  command: git commit -a -m "latest changes in dev"
 
-- debug:
-    msg: " ************ {{venkiAlahari.stdout}}"
-- include: tasks/createOrg.yml
-    orgName={{item}}
-  with_items: "{{json_file}}"
-
-- debug:
-    msg: " AMMU {{imported_var}}"
+- name: git push
+  command: git push

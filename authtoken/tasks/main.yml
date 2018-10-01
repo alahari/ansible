@@ -4,9 +4,6 @@
 - debug:
     msg: "This is a debug message .......{{authCredentials}}"
 
-- shell: echo "Venki Alahari ..."
-  register: venkiAlahari
-
 - name: get auth token
   uri:
      url: http://localhost:8080/aa-restapi/ca/advancedauth/v1/admin/authtoken

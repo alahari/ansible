@@ -42,6 +42,10 @@
 # - name: git checkout
 #   command: git checkout master
 
+- name: Run git commands
+  shell: |
+    cd aaProfiles/
+    git add *
 
 - name: git add
   command: git add *

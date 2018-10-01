@@ -34,6 +34,9 @@
 - name: change dir
   command: chdir=aaProfiles ls
 
+- debug:
+    msg: "pwd .... {{pwd}}"  
+
 # - script: tasks/gitpublish.sh
 
 # - name: git checkout

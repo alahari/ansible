@@ -2,12 +2,12 @@
 
 
   {
-    "orgName": "TESTNEWLDAP",
-    "displayName": "testnewldap",
-    "description": "testnewldap",
+    "orgName": "TESTNEWLDAPAL",
+    "displayName": "testnewldapal",
+    "description": "testnewldapal",
     "dateCreated": "2018-05-15T18:58:39.+0000",
     "dateModified": "2018-05-18T14:34:12.033+0000",
-    "repositoryType": "ARUSER",
+    "repositoryType": "LDAP",
     "status": "ACTIVE"
   }
 ]

@@ -44,3 +44,6 @@
 - include: tasks/createOrg.yml
     orgName={{item}}
   with_items: "{{json_file}}"
+
+- debug:
+    msg: " AMMU {{imported_var}}"

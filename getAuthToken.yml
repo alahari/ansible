@@ -10,7 +10,7 @@
          return_content: yes
          method: POST
          body: "{{ lookup('file','aaProfiles/getAuthToken.json') }}"
-         status_code: 201
+         status_code: 201         
          body_format: json
 
        register: result

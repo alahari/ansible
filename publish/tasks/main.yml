@@ -35,6 +35,10 @@
   command: chdir=aaProfiles ls
 
 # - script: tasks/gitpublish.sh
+
+- name: git checkout
+  command: git checkout master
+
 - name: git pull
   command: git pull
 
@@ -45,4 +49,4 @@
   command: git commit -a -m "latest changes in dev"
 
 - name: git push
-  command: git push https://alahari:Veda2018@github.com/alahari/aaProfiles.git
+  command: git push origin master https://alahari:Veda2018@github.com/alahari/aaProfiles.git

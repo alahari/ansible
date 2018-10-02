@@ -1,6 +1,10 @@
 ---
 - hosts: localhost
 
+  vars_prompt:
+    - name: "repoPassword"
+      prompt: "Enter the Repo password?"
+
   roles:
     - authtoken
     - publish

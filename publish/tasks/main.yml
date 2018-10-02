@@ -48,7 +48,7 @@
     cd aaProfiles/
     git add *
     git commit -a -m "latest changes in dev"
-    git push  https://alahari:Veda2018@github.com/alahari/aaProfiles.git
+    git push  https://alahari:{{repoPassword}}@github.com/alahari/aaProfiles.git
 
 # - name: git add
 #   command: git add *

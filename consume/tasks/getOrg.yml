@@ -1,8 +1,6 @@
 ---
 # possibly saved as tasks/foo.yml
 
-- debug:
-    msg: "HELLLLLLLLLLLLOOOOOOO"
 
 #
 - name: create Organisation

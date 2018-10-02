@@ -3,3 +3,8 @@
 
 simple_value: "Superb!!!"
 json_file: "{{lookup('file','./orgs.json') | from_json }}"
+
+vars_prompt:
+  - name: "some_password"
+    prompt: "Enter password"
+    private: yes

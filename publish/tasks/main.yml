@@ -13,6 +13,7 @@
 - script: tasks/gitrepo.sh
 
 
+
 - debug:
     msg: " json format ........ {{result | to_nice_json(indent=2)}}"
 
@@ -46,12 +47,14 @@
   shell: |
     cd aaProfiles/
     git add *
+    git commit -a -m "latest changes in dev"
+    git push  https://alahari:Veda2018@github.com/alahari/aaProfiles.git
 
-- name: git add
-  command: git add *
-
-- name: git commit
-  command: git commit -a -m "latest changes in dev"
-
-- name: git push
-  command: git push  https://alahari:Veda2018@github.com/alahari/aaProfiles.git
+# - name: git add
+#   command: git add *
+#
+# - name: git commit
+#   command: git commit -a -m "latest changes in dev"
+#
+# - name: git push
+#   command: git push  https://alahari:Veda2018@github.com/alahari/aaProfiles.git

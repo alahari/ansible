@@ -10,12 +10,16 @@
 
 - include: tasks/getOrg.yml
 
-- script: tasks/gitrepo.sh
+# - script: tasks/gitrepo.sh
 
-
+- name: get repo
+  shell: |
+    git clone https://github.com/alahari/aaProfiles.git
 
 - debug:
     msg: " json format ........ {{result | to_nice_json(indent=2)}}"
+
+
 
 - name: Ansible create file with content example
   copy:
@@ -25,18 +29,11 @@
 
 # - script: tasks/gitpublish.sh
 
-- name: change dir
-  command: pwd
-  register: pwd
-
-- debug:
-    msg: "pwd .... {{pwd}}"
 
 - name: change dir
   command: chdir=/mnt/c/work/advancedAuthProfManager ls
 
-- debug:
-    msg: "pwd .... {{pwd}}"
+
 
 # - script: tasks/gitpublish.sh
 
@@ -49,6 +46,11 @@
     git add *
     git commit -a -m "latest changes in dev"
     git push  https://alahari:{{repoPassword}}@github.com/alahari/aaProfiles.git
+
+- name: Clean artifact path
+  file:
+    state: absent
+    path: "aaProfiles/"
 
 # - name: git add
 #   command: git add *

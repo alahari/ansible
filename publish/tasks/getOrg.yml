@@ -1,9 +1,6 @@
 ---
 # possibly saved as tasks/foo.yml
 
-- debug:
-    msg: "Getting name from main playbook {{repoPassword}}"
-
 
 - name: get Organisations
   uri:

@@ -1,0 +1,30 @@
+---
+# possibly saved as tasks/foo.yml
+
+
+- name: json path testing
+  debug:
+    msg: "  displaying org name {{orgName | json_query('orgName')}}"
+
+- name: adding json key
+  set_fact:
+    imported_var: "{{ orgName | default([])  | combine({'repositoryType':'ARUSER'})}}"
+  when: orgName.repositoryType=="LDAP"
+
+
+
+
+- name: create Organisation
+  uri:
+    url: http://localhost:8080/aa-restapi/ca/advancedauth/v1/admin/orgs
+    return_content: yes
+    method: POST
+    body: "{{imported_var}}"
+    status_code: 201
+    body_format: json
+    headers:
+      Content-Type: "application/json"
+      accept: "application/json"
+      authToken: "{{token}}"
+
+  register: result

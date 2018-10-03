@@ -1,8 +1,35 @@
 ---
 # tasks file for consume
 
+# - include: tasks/getOrg.yml
+
+- name: Cleanup repo dir
+  file:
+    state: absent
+    path: "aaProfiles/"
+
+
+- name: get repo
+  shell: |
+    git clone https://github.com/alahari/aaProfiles.git
+
+
+- name: set fact
+  set_fact:
+    orgs: "{{lookup('file','aaProfiles/org.json') | from_json }}"
+
+
 - name: debug message
   debug:
-    msg: "Here You GO !!!!!"
+    msg: "Here You GO !!!!! {{orgs}}"
 
-- include: tasks/getOrg.yml
+
+- include: tasks/createOrg.yml
+    orgName={{item}}
+  with_items: "{{orgs}}"
+
+
+- name: Cleanup the repo temp dir
+  file:
+    state: absent
+    path: "aaProfiles/"

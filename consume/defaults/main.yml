@@ -1,2 +1,4 @@
 ---
 # defaults file for consume
+
+json_file: "{{lookup('file','./orgs.json') | from_json }}"

@@ -7,6 +7,11 @@
 #  register: json
 
 
+- name: Clean artifact path
+  file:
+    state: absent
+    path: "aaProfiles/"
+
 
 - include: tasks/getOrg.yml
 
@@ -39,6 +44,7 @@
 
 # - name: git checkout
 #   command: git checkout master
+
 
 - name: Run git commands
   shell: |

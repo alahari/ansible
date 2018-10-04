@@ -46,7 +46,7 @@
 #   command: git checkout master
 
 
-- name: Run git commands
+- name: commit and publish the changes
   shell: |
     cd aaProfiles/
     git add *
